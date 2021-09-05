@@ -4,4 +4,6 @@ import com.ifpb.pdist.bancoweb.model.Correntista;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CorrentistaRepository extends JpaRepository<Correntista, Integer> {
+
+    public Correntista findByEmail(String email);
 }
