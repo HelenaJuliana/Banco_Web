@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt_BR" xmlns:th="www.thymeleaf.org">
+<head>
+
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+
+<title>Sistema Bancário - Operações em Conta</title>
+</head>
+<body>
+	
+	<!--/*/ <th:block th:include="fragments/header :: menu"></th:block> /*/-->
+	
+	<main role="main" class="container">
+
+		<div class="starter-template">
+			<h1>Operações em conta</h1>
+			<hr />
+
+			<div class="alert alert-primary" role="alert"
+				th:if="">
+				<span th:text="" style="color: blue"></span>
+			</div>
+
+			<div th:if="">
+				<form action="operacao" method="POST">
+					<div class="row">
+						<div class="col-md-2 mb-2">
+							<label for="nuConta">Número da conta</label> <input type="text"
+								id="nuConta" name="nuConta" class="form-control" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<button class="btn btn-primary btn-lg btn-block" type="submit">Próximo</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div th:if="">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Conta: <span
+						th:text=""></span></li>
+					<li class="list-group-item">Correntista: <span
+						th:text=""></span></li>
+					<li class="list-group-item">Data abertura: <span
+						th:text=""></span></li>
+				</ul>
+
+				<div style="margin-bottom: 30px;"></div>
+
+				<h4>Informações da transação</h4>
+				<hr class="mb-4">
+
+				<form action="operacao" method="POST" th:object="">
+					<input type="hidden" th:field="*{id}" /> 
+					<input type="hidden"
+						th:value="" id="nuConta" name="nuConta" />
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							<label for="descricao">Descrição</label> <input type="text"
+								class="form-control" th:field="" /> <label
+								for="data">Data</label> <input type="text" class="form-control"
+								th:field="" /> <label for="valor">Valor</label> <input
+								type="text" class="form-control" th:field="" /><br />
+							<button class="btn btn-primary btn-lg btn-block" type="submit">Realizar
+								operação</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+
+		</div>
+	</main>
+	
+	<!--/*/ <th:block th:include="fragments/footerinc :: foot"></th:block> /*/-->
+	
+</body>
+</html>
