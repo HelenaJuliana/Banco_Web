@@ -1,13 +1,13 @@
-package com.ifpb.pdist.service.email;
+package com.ifpb.pdist.email;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmailServiceApplicationTests {
+class EmailApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
