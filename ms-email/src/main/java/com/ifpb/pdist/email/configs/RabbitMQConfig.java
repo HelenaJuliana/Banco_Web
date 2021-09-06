@@ -1,4 +1,4 @@
-package com.ifpb.pdist.email.dtos.configs;
+package com.ifpb.pdist.email.configs;
 
 
 import org.springframework.amqp.core.Queue;
