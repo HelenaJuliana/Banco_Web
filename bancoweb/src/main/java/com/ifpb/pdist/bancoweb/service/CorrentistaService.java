@@ -1,13 +1,15 @@
 package com.ifpb.pdist.bancoweb.service;
 
-import com.ifpb.pdist.bancoweb.model.Correntista;
-import com.ifpb.pdist.bancoweb.repository.CorrentistaRepository;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import com.ifpb.pdist.bancoweb.model.Correntista;
+import com.ifpb.pdist.bancoweb.repository.CorrentistaRepository;
+import com.ifpb.pdist.bancoweb.util.PasswordUtil;
 
 @Service
 public class CorrentistaService {
@@ -17,6 +19,7 @@ public class CorrentistaService {
 
     @Transactional
     public void insertBD(Correntista correntista) {
+    	correntista.setSenha(PasswordUtil.hashPassword(correntista.getSenha()));
         correntistaRepository.save(correntista);
 
     }

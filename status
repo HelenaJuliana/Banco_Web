@@ -1,0 +1,75 @@
+[33mcommit f37386b7e07ca0625bba5af3a9499e369e360500[m[33m ([m[1;36mHEAD -> [m[1;32memail[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: d487196 5f4a9a3
+Author: Ângela Oliveira <39630870+angela-oliveira@users.noreply.github.com>
+Date:   Sun Sep 5 13:50:54 2021 -0300
+
+    Merge pull request #3 from HelenaJuliana/branch_angela
+    
+    tela login
+
+[33mcommit 5f4a9a33008662a107bd555fa1224bab18a3b1f0[m[33m ([m[1;31morigin/branch_angela[m[33m)[m
+Author: angela.oliveira <angela.oliveira@assert.ifpb.edu.br>
+Date:   Sun Sep 5 13:49:44 2021 -0300
+
+    tela login
+
+[33mcommit d487196f1bbad79bcedefc8bc52bc8459aac788c[m
+Merge: 22bd39a 455eca7
+Author: Ângela Oliveira <39630870+angela-oliveira@users.noreply.github.com>
+Date:   Sun Sep 5 01:44:44 2021 -0300
+
+    Merge pull request #2 from HelenaJuliana/branch_angela
+    
+    Branch angela
+
+[33mcommit 455eca77907497f3cc659ce4c68ba9b7faa4b7b8[m
+Merge: 79cc26d 22bd39a
+Author: angela.oliveira <angela.oliveira@assert.ifpb.edu.br>
+Date:   Sun Sep 5 01:02:10 2021 -0300
+
+    merge
+
+[33mcommit 22bd39a658fc0bde8cf3afec5c12339382d58e55[m
+Merge: bc56c21 6b88708
+Author: andreia23 <44982439+andreia23@users.noreply.github.com>
+Date:   Sun Sep 5 00:58:35 2021 -0300
+
+    Merge pull request #1 from HelenaJuliana/andreia
+    
+    Andreia
+
+[33mcommit 6b8870817dac37d8158fe35bbe79a0085dc41a9a[m[33m ([m[1;31morigin/andreia[m[33m)[m
+Author: andreia23 <andreialima.berto08@gmail.com>
+Date:   Sun Sep 5 00:56:58 2021 -0300
+
+    login
+
+[33mcommit eba1c2fa05088bda641b124a73c0998826ecd1cd[m
+Author: andreia23 <andreialima.berto08@gmail.com>
+Date:   Sun Sep 5 00:43:04 2021 -0300
+
+    cadastrando d=correntista
+
+[33mcommit 79cc26d1dc554e70eae98224e7f3b07bcbcdffd1[m
+Author: angela.oliveira <angela.oliveira@assert.ifpb.edu.br>
+Date:   Sun Sep 5 00:41:39 2021 -0300
+
+    telas
+
+[33mcommit bc56c213620c18f2e8f105ff7ddd48714cbafeec[m
+Author: andreia23 <andreialima.berto08@gmail.com>
+Date:   Sat Sep 4 23:11:26 2021 -0300
+
+    Microserviço para envio de email
+
+[33mcommit d6b954765317abcaaf0b456327277a21db141c15[m
+Author: andreia23 <andreialima.berto08@gmail.com>
+Date:   Sat Sep 4 22:54:35 2021 -0300
+
+    producer-api
+
+[33mcommit 706528f6caaed37b1726978e1f726b41a02b2674[m
+Author: HelenaJuliana <helenajuliana14@gmail.com>
+Date:   Sat Aug 28 16:21:22 2021 -0300
+
+    first commit
