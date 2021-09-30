@@ -18,6 +18,7 @@ public class CorrentistaController {
     @RequestMapping("/insert")
     public ModelAndView insertBD(ModelAndView modelAndView, @ModelAttribute Correntista correntista) {
         correntistaService.insertBD(correntista);
+        modelAndView.setViewName("correntistas/list");
         modelAndView.addObject("correntistas", correntistaService.findAll());
         return modelAndView;
     }
@@ -32,4 +33,3 @@ public class CorrentistaController {
 
 
 }
-
