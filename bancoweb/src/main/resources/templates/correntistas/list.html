@@ -24,11 +24,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="">
-						<td th:text=""></td>
-						<td th:text=""></td>
-						<td th:text=""></td>
-						<td th:text=""></td>
+					<tr th:each="correntista : ${correntistas}">
+						<td th:text="${correntista.nome}"></td>
+						<td th:text="${correntista.email}"></td>
+						<td th:text="${correntista.admin}"></td>
+						<td th:text="${#strings.substring(correntista.senha,1,25)} + '...'"></td>
 					</tr>
 				</tbody>
 			</table>

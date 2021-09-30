@@ -16,15 +16,15 @@
 			<hr />
 			
 			<div class="alert alert-primary" role="alert"
-				th:if="">
-				<span th:text="" style="color: blue"></span>
+				th:if="${mensagem != null}">
+				<span th:text="${mensagem}" style="color: blue"></span>
 			</div>
 			
 			
 			<ul class="list-group list-group-flush">
-  				<li class="list-group-item">Conta: <span th:text=""></span></li>
-  				<li class="list-group-item">Correntista: <span th:text=""></span></li>
-  				<li class="list-group-item">Data abertura: <span th:text=""></span></li>
+  				<li class="list-group-item">Conta: <span th:text="${session.conta.numero}"></span></li>
+  				<li class="list-group-item">Correntista: <span th:text="${session.conta.correntista.nome}"></span></li>
+  				<li class="list-group-item">Data abertura: <span th:text="${#dates.format(session.conta.data, 'dd/MM/yyyy')}"></span></li>
   			</ul>
   			
   			<div style="margin-bottom: 30px;"> </div>
@@ -38,13 +38,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="">
-						<td th:text="" />
-						<td th:text="" />
-						<td th:text="" style="text-align: right"/>
+					<tr th:each="transacao : ${session.conta.transacoes}">
+						<td th:text="${transacao.descricao}" />
+						<td th:text="${#dates.format(transacao.data, 'dd/MM/yyyy')}" />
+						<td th:text="${#numbers.formatCurrency(transacao.valor)}" style="text-align: right"/>
 					</tr>
 					<th style="font-weight:bold; background-color: darkgray;" colspan="2">Total</th>
-					<td style="font-weight:bold; background-color: darkgray;text-align: right" th:text=""></td>
+					<td style="font-weight:bold; background-color: darkgray;text-align: right" th:text="${#numbers.formatCurrency(conta.saldo)}"></td>
 				</tbody>
 			</table>
 		</div>

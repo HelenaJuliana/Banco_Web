@@ -15,10 +15,4 @@ public abstract class PasswordUtil {
 			return false;
 	}
 
-	// Exemplo de uso
-	public static void main(String[] args) {
-		System.out.println(PasswordUtil.hashPassword("Nabucodonosor"));
-		System.out.println(PasswordUtil.checkPass("Nabucodonosor",
-				"$2a$10$ERNm3h05JniqNPZhVZjQoeNvEimJffDJFHs1OVW2XqCUfzHRUxFM2"));
-	}
 }

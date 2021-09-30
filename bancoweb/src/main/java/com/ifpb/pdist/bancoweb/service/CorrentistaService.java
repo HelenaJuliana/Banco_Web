@@ -18,9 +18,20 @@ public class CorrentistaService {
     private CorrentistaRepository correntistaRepository;
 
     @Transactional
-    public void insertBD(Correntista correntista) {
-    	correntista.setSenha(PasswordUtil.hashPassword(correntista.getSenha()));
-        correntistaRepository.save(correntista);
+    public void insertBD() {
+		Correntista darwin = new Correntista();
+		darwin.setEmail("darwin@ed.ac.uk");
+		darwin.setNome("Charles Robert Darwin");
+		darwin.setSenha(PasswordUtil.hashPassword("evolucao"));
+//    	correntista.setSenha(PasswordUtil.hashPassword(correntista.getSenha()));
+        correntistaRepository.save(darwin);
+
+		Correntista admin = new Correntista();
+		admin.setEmail("admin@spring-banco.com.br");
+		admin.setNome("Administrador do Sistema");
+		admin.setSenha(PasswordUtil.hashPassword("root123"));
+		admin.setAdmin(true);
+        correntistaRepository.save(admin);
 
     }
 

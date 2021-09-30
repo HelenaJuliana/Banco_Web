@@ -3,6 +3,18 @@
 <head>
 <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
 
+<script th:inline="javascript">
+    function sendDelete(url) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("DELETE", url, true);
+        xhttp.onload = function () {
+            let responseURL = xhttp.responseURL;
+            console.log("Redirecting to:", responseURL);
+            window.location.replace(responseURL);
+        };
+        xhttp.send();
+    }
+</script>
 <title>Sistema Bancário - Contas Cadastradas</title>
 </head>
 <body>
@@ -15,9 +27,9 @@
 			<h1>Listagem de Contas</h1>
 			<hr />
 			
-			<div th:if="" th:utext="'<button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;><span aria-hidden=&quot;true&quot;>&times;</span></button>'" class="alert alert-primary alert-dismissible fade show" role="alert"></div>
+			<div th:if="${not #strings.isEmpty(mensagem)}" th:utext="${mensagem} +'<button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;><span aria-hidden=&quot;true&quot;>&times;</span></button>'" class="alert alert-primary alert-dismissible fade show" role="alert"></div>
 
-			<form th:action="" method="GET">
+			<form th:action="@{/contas/form}" method="GET">
 				<button class="btn btn-primary" type="submit">Nova</button>
 			</form>
 			<br />
@@ -32,6 +44,21 @@
 					</tr>
 				</thead>
 				<tbody>
+					<tr th:each="conta : ${contas}">
+						<td><a th:href="@{/contas/{id}(id=${conta.id})}" th:text="${conta.numero}"></a></td>
+						<td><a th:text="${conta.correntista.nome}"></a></td>
+						
+						<td th:text="${#dates.format(conta.data, 'dd/MM/yyyy')}"
+							style="text-align: center;" />
+						<td><a class="btn btn-outline-primary btn-sm" th:href="@{/contas/{id}/delete(id=${conta.id})}">
+								<img th:src="@{icons/trash.svg}" title="Excluir conta" alt="Excluir conta"/>
+							</a>
+							<a th:href="@{/contas/{id}/transacoes/(id=${conta.id})}" class="btn btn-outline-primary btn-sm text-white"
+								type="submit">
+								<span class="color:white"><img th:src="@{icons/file-earmark-diff.svg}" title="Ver transações" alt="Ver transações"/></span>
+							</a>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 			

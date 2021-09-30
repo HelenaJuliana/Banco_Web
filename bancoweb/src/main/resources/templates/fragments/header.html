@@ -20,12 +20,12 @@
 						<li class="nav-item active"><a class="nav-link"
 							th:href="@{/home}">Início<span class="sr-only">'</span>
 						</a></li>
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown" th:if="${session.usuario.admin}"><a
 							class="nav-link dropdown-toggle" href="#" id="dropdown01"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contas</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown01">
-<!--								<a class="dropdown-item" th:href="">Cadastro</a>-->
-<!--								<a class="dropdown-item" th:href="/correntista">Listagem</a>-->
+								<a class="dropdown-item" th:href="@{/contas/form}">Cadastro</a>
+								<a class="dropdown-item" th:href="@{/contas}">Listagem</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" id="dropdown01"
@@ -33,16 +33,16 @@
 							<div class="dropdown-menu" aria-labelledby="dropdown01">
 								<a class="dropdown-item" th:href="@{/contas/operacao}">Crédito/Débito</a>
 							</div></li>
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown" th:if="${session.usuario.admin}"><a
 							class="nav-link dropdown-toggle" href="#" id="dropdown01"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Correntistas</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown01">
-<!--								<a class="dropdown-item" th:href="">Insere correntistas</a>-->
-<!--								<a class="dropdown-item" th:href="">Listar correntistas</a>	-->
+								<a class="dropdown-item" th:href="@{/correntistas/insert}">Insere correntistas</a>
+								<a class="dropdown-item" th:href="@{/correntistas}">Listar correntistas</a>
 							</div></li>
 					</ul>
 					<form th:action="@{/login/out}" class="form-inline my-2 my-lg-0">
-<!--						<span th:text="" style="margin-right:15px; color: lightgray;"></span>-->
+						<span th:text="${session.usuario.nome}" style="margin-right:15px; color: lightgray;"></span>
 						<button class="btn btn-secondary my-2 my-sm-0" type="submit">Sair</button>
 					</form>
 				</div>

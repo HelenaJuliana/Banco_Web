@@ -13,32 +13,32 @@
 	<main role="main" class="container">
 		<div class="starter-template">
 			
-			<span th:text="" style="color:blue"></span>
+			<span th:text="${mensagem}" style="color:blue"></span>
 
 			<div class="col-md-8 order-md-1">
 				<h1 class="mb-3">Cadastro de conta</h1>
 				
-				<form th:action="@{/contas}" method="POST" th:object="">
-					<input type="hidden" th:field=""/>
+				<form th:action="@{/contas}" method="POST" th:object="${contaForm}">
+					<input type="hidden" th:field="*{conta.id}"/>
 					<div class="row">
 						<div class="col-md-3 mb-3">
 							<label for="correntista">Número</label> <input type="text"
-								th:field="" class="form-control" />
+								th:field="*{conta.numero}" class="form-control" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 mb-3">
 							<label for="correntista">Correntista</label> 
-							<select th:field="" class="form-control">
-								<option th:each=""
-									th:value="" th:label=""></option>
+							<select th:field="*{correntistaId}" class="form-control">
+								<option th:each="cor : ${correntistaItems}"
+									th:value="${cor.id}" th:label="${cor.nome}"></option>
 							</select>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-3 mb-3">
 							<label for="lastName">Data</label> <input type="text"
-								th:field="" class="form-control" />
+								th:field="*{conta.data}" class="form-control" />
 						</div>
 					</div>
 					<hr class="mb-4">
