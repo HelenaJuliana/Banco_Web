@@ -18,6 +18,10 @@ public class EmailConsumer {
     @RabbitListener(queues = "${spring.rabbitmq.queue}")
     public void listen(@Payload EmailDto emailDto) {
         EmailModel emailModel = new EmailModel();
+        emailDto.setOwnerRef("Helena");
+        emailDto.setEmailFrom("helenabarros245@gmail.com");
+        emailDto.setSubject("Banco Web");
+        emailDto.setText("Bem vindo ao banco Web plataforma que faz transações rápidas e seguras! *-*");
         BeanUtils.copyProperties(emailDto, emailModel);
         emailService.sendEmail(emailModel);
         System.out.println("Email Status: " + emailModel.getStatusEmail().toString());
