@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ifpb.pdist.bancoweb.model.Correntista;
+import com.ifpb.pdist.bancoweb.model.dtos.EmailDto;
 import com.ifpb.pdist.bancoweb.repository.CorrentistaRepository;
 import com.ifpb.pdist.bancoweb.util.PasswordUtil;
 
@@ -20,11 +21,16 @@ public class CorrentistaService {
     @Transactional
     public void insertBD() {
 		Correntista darwin = new Correntista();
-		darwin.setEmail("darwin@ed.ac.uk");
+		darwin.setEmail("helenabarros245@gmail.com");
 		darwin.setNome("Charles Robert Darwin");
 		darwin.setSenha(PasswordUtil.hashPassword("evolucao"));
+		EmailDto emailDto = new EmailDto();
+		emailDto.setEmailTo(darwin.getEmail());
+		
 //    	correntista.setSenha(PasswordUtil.hashPassword(correntista.getSenha()));
         correntistaRepository.save(darwin);
+        
+        
 
 		Correntista admin = new Correntista();
 		admin.setEmail("admin@spring-banco.com.br");
